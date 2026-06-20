@@ -1,0 +1,378 @@
+/* =========================
+   0) Reset ringan + variable
+   ========================= */
+:root {
+  --bg: #0b1220;
+  --surface: #0f1b33;
+  --card: #111f3a;
+  --text: #e9eef8;
+  --muted: #b7c2d9;
+  --primary: #7c5cff;
+  --primary-2: #35d0ba;
+  --border: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box; /* Box sizing: border-box */
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0; /* menghapus margin default */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 20% 0%, #16264a 0%, var(--bg) 55%);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Setting the viewport sudah dilakukan di <meta name="viewport" ...> di HTML */
+
+.container {
+  width: 92%;               /* Using percentages */
+  max-width: 980px;         /* max-width */
+  margin: 0 auto;
+}
+
+/* =========================
+   1) Header + Nav (Flexbox)
+   ========================= */
+.site-header {
+  position: sticky; /* Position: sticky */
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(11, 18, 32, 0.72);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex; /* Flexbox element */
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.brand {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brand-mark {
+  display: inline-grid; /* Display: inline-block alternative */
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #0b1220;
+  font-weight: 800;
+}
+
+.brand-text {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Flexbox */
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.nav-links a:hover {
+  color: var(--text); /* Pseudo class */
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* =========================
+   2) Hero
+   ========================= */
+.hero {
+  padding: 44px 0 18px;
+}
+
+.hero-inner {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.hero-copy {
+  flex: 1;
+}
+
+.hero-media {
+  flex: 1;
+}
+
+.hero h1 {
+  line-height: 1.15;
+  margin: 0 0 12px;
+  font-size: clamp(28px, 3.2vw, 44px); /* Units - "vw" */
+}
+
+.lead {
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.hero-media img {
+  width: 100%;
+  max-width: 100%; /* max-width: 100% */
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+/* =========================
+   3) Buttons (display + hover)
+   ========================= */
+.btn {
+  display: inline-block; /* Display: inline-block */
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 650;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #0b1220;
+  border-color: transparent;
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.hero-cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.small-note {
+  color: rgba(233, 238, 248, 0.7);
+  font-size: 14px;
+}
+
+/* =========================
+   4) Sections + Cards
+   ========================= */
+.section {
+  padding: 34px 0;
+}
+
+.section-alt {
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+  margin: 0 0 6px;
+  font-size: 26px;
+}
+
+/* Pseudo element */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+}
+
+.section-subtitle {
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+
+.cards {
+  display: flex; /* Flexbox layout */
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(17, 31, 58, 0.62);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  flex: 1;
+  min-width: 220px;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+}
+
+.card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+/* =========================
+   5) Table
+   ========================= */
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+  background: rgba(17, 31, 58, 0.4);
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 12px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.schedule-table th {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.schedule-table td {
+  color: var(--muted);
+}
+
+/* =========================
+   6) Form
+   ========================= */
+.signup-form {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field label {
+  display: block; /* Display: block */
+  margin-bottom: 6px;
+  color: var(--text);
+  font-weight: 650;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(11, 18, 32, 0.5);
+  color: var(--text);
+  outline: none;
+}
+
+/* Pseudo class: focus */
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: rgba(124, 92, 255, 0.8);
+  box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.15);
+}
+
+.field-full {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.form-note {
+  margin: 0;
+  color: rgba(233, 238, 248, 0.7);
+  font-size: 14px;
+}
+
+/* =========================
+   7) Display: none vs visibility: hidden (demo section)
+   ========================= */
+/* Demo snippet:
+.hidden-demo-1 { display: none; }
+.hidden-demo-2 { visibility: hidden; }
+*/
+
+/* =========================
+   8) Footer
+   ========================= */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 20px 0 36px;
+  color: var(--muted);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   9) Media Query (Responsive)
+   ========================= */
+@media (max-width: 640px) {
+  .hero-inner {
+    flex-direction: column; /* Responsive: jadi 1 kolom */
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    padding: 8px 8px;
+  }
+}
