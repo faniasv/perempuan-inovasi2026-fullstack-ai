@@ -2,14 +2,16 @@
    0) Reset ringan + variable
    ========================= */
 :root {
-  --bg: #0b1220;
-  --surface: #0f1b33;
-  --card: #111f3a;
-  --text: #e9eef8;
-  --muted: #b7c2d9;
-  --primary: #7c5cff;
-  --primary-2: #35d0ba;
-  --border: rgba(255, 255, 255, 0.12);
+  /* Palette dari gambar */
+  --bg: #f2ebe9;
+  --surface: #eddcd9;
+  --card: #ffffff;
+  --text: #264143;
+  --muted: rgba(38, 65, 67, 0.65); /* #264143 dengan transparansi */
+  --primary: #de5499;
+  --primary-2: #e99f4c;
+  --primary-3: #264143;
+  --border: rgba(38, 65, 67, 0.15);
 }
 
 * {
@@ -24,7 +26,7 @@ body {
 body {
   margin: 0; /* menghapus margin default */
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(1200px 600px at 20% 0%, #16264a 0%, var(--bg) 55%);
+  background: var(--bg);
   color: var(--text);
   line-height: 1.6;
 }
@@ -45,7 +47,7 @@ body {
   top: 0;
   z-index: 10;
   backdrop-filter: blur(10px);
-  background: rgba(11, 18, 32, 0.72);
+  background: rgba(242, 235, 233, 0.85); /* transparan var(--bg) */
   border-bottom: 1px solid var(--border);
 }
 
@@ -71,7 +73,7 @@ body {
   height: 36px;
   border-radius: 10px;
   background: linear-gradient(135deg, var(--primary), var(--primary-2));
-  color: #0b1220;
+  color: #ffffff; /* Diubah agar kontras dengan gradient pink/orange */
   font-weight: 800;
 }
 
@@ -98,7 +100,7 @@ body {
 
 .nav-links a:hover {
   color: var(--text); /* Pseudo class */
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(38, 65, 67, 0.08);
 }
 
 /* =========================
@@ -159,13 +161,13 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-2));
-  color: #0b1220;
+  background: linear-gradient(135deg, var(--primary-3), var(--primary));
+  color: #ffffff;
   border-color: transparent;
 }
 
 .btn-ghost {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(38, 65, 67, 0.05);
 }
 
 .hero-cta {
@@ -175,7 +177,7 @@ body {
 }
 
 .small-note {
-  color: rgba(233, 238, 248, 0.7);
+  color: var(--muted);
   font-size: 14px;
 }
 
@@ -187,7 +189,7 @@ body {
 }
 
 .section-alt {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(38, 65, 67, 0.03);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -220,7 +222,7 @@ body {
 }
 
 .card {
-  background: rgba(17, 31, 58, 0.62);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 16px;
@@ -251,7 +253,7 @@ body {
   width: 100%;
   border-collapse: collapse;
   min-width: 560px;
-  background: rgba(17, 31, 58, 0.4);
+  background: var(--card);
 }
 
 .schedule-table th,
@@ -263,11 +265,11 @@ body {
 
 .schedule-table th {
   color: var(--text);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(38, 65, 67, 0.05);
 }
 
 .schedule-table td {
-  color: var(--muted);
+  color: var(--text);
 }
 
 /* =========================
@@ -275,7 +277,7 @@ body {
    ========================= */
 .signup-form {
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface);
   border-radius: 16px;
   padding: 16px;
 }
@@ -300,7 +302,7 @@ body {
   padding: 10px 12px;
   border-radius: 12px;
   border: 1px solid var(--border);
-  background: rgba(11, 18, 32, 0.5);
+  background: var(--card);
   color: var(--text);
   outline: none;
 }
@@ -309,8 +311,9 @@ body {
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-  border-color: rgba(124, 92, 255, 0.8);
-  box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.15);
+  border-color: var(--primary);
+  /* Highlight pink saat fokus */
+  box-shadow: 0 0 0 4px rgba(222, 84, 153, 0.15); 
 }
 
 .field-full {
@@ -327,7 +330,7 @@ body {
 
 .form-note {
   margin: 0;
-  color: rgba(233, 238, 248, 0.7);
+  color: var(--muted);
   font-size: 14px;
 }
 

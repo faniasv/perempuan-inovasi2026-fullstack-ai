@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Her Food</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="Kembali ke atas">
+          <span class="brand-mark">H</span>
+          <span class="brand-text">HerFood</span>
+        </a>
 
+        <nav class="nav" aria-label="Navigasi utama">
+          <ul class="nav-links">
+            <li><a href="#features">Cara Kerja</a></li>
+            <li><a href="#schedule">Jurnal Hormon</a></li>
+            <li><a href="#signup">Coba Scan</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1>Kenali Makananmu, Pahami Hormonmu</h1>
+            <p class="lead">
+              HerFood menggunakan AI untuk men-scan menu makanan dan memprediksi dampaknya <strong>pada siklus menstruasi, mood, dan kesehatan hormonalmu.</strong>
+              Makan <em> cerdas,</em> hidup seimbang.
+            </p>
+            <!-- Button di Header-->
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#signup">Coba Scan Sekarang</a>
+              <a class="btn btn-ghost" href="#features">Pelajari Cara Kerjanya</a>
+            </div>
+
+            <p class="small-note">
+              Catatan: Didukung oleh ahli gizi dan berbasis literatur medis.
+            </p>
+          </div>
+
+          <div class="hero-media">
+            <img
+              src="./asset/girl-cooking.png"
+              alt="Ilustrasi memasak"
+            />
+          </div>
+        </div>
+      </section>
+      
+      <section id="features" class="section">
+        <div class="container">
+          <h2 class="section-title">Fitur Unggulan HerFood</h2>
+          <p class="section-subtitle">Teknologi AI yang dirancang khusus untuk memahami tubuh unik perempuan.</p>
+    
+          <div class="cards">
+            <div class="card">
+              <h3>Scan Menu Instan</h3>
+              <p style="color: var(--muted); margin: 0;">
+                Cukup foto buku menu di restoran atau komposisi makanan, AI kami akan menganalisis kandungan nutrisinya dalam hitungan detik.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Dampak Hormonal</h3>
+              <p style="color: var(--muted); margin: 0;">
+                Prediksi efek makanan terhadap lonjakan gula darah dan estrogen, disesuaikan dengan fase siklusmu (folikuler, ovulasi, atau luteal).
+              </p>
+              </div>
+
+            <div class="card">
+            <h3> Rekomendasi Pintar</h3>
+            <p style="color: var(--muted); margin: 0;">
+              Dapatkan saran menu alternatif yang lebih ramah hormon jika makanan yang kamu scan berpotensi memicu inflamasi atau <em>mood swing</em>.
+            </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="schedule" class="section section-alt">
+        <div class="container">
+          <h2 class="section-title">Contoh Analisis Makanan</h2>
+          <p class="section-subtitle">
+            Bagaimana AI HerFood membedah menu favoritmu?
+          </p>
+
+          <div class="table-wrap">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Menu Makanan</th>
+                  <th>Prediksi Efek Hormonal</th>
+                  <th>Rekomendasi Fase</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Kopi Susu Gula Aren</strong></td>
+                  <td>Bisa memicu lonjakan kortisol & inflamasi ringan</td>
+                  <td>Kurangi saat Fase Luteal (PMS)</td>
+                </tr>
+                <tr>
+                  <td><strong>Salad Salmon</strong></td>
+                  <td>Kaya Omega-3, membantu menstabilkan hormon</td>
+                  <td>Sangat baik untuk Fase Ovulasi</td>
+                </tr>
+                <tr>
+                  <td><strong>Dark Chocolate (80%)</strong></td>
+                  <td>Tinggi magnesium, meredakan kram & stres</td>
+                  <td>Ideal untuk Fase Menstruasi</td>
+                </tr>
+                <tr>
+                  <td><strong>Tempe dan Tahu</strong></td>
+                  <td>Mengandung fitoestrogen yang membantu menyeimbangkan kadar estrogen alami tubuh.</td>
+                  <td>Sangat baik dikonsumsi saat Fase Folikuler</td>
+                </tr>
+                <tr>
+                  <td><strong>Seblak</strong></td>
+                  <td>Tinggi natrium, memicu retensi air (kembung) dan memperburuk inflamasi.</td>
+                  <td>Sebaiknya dihindari saat awal Fase Menstruasi</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="signup" class="section">
+        <div class="container">
+          <h2 class="section-title">Form Pendaftaran (Latihan)</h2>
+          <p class="section-subtitle">
+            Form ini belum mengirim data ke server—fokusnya latihan HTML + styling.
+          </p>
+
+          <form class="signup-form" action="#" method="post">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Nama</label>
+                <input id="name" name="name" type="text" placeholder="Nama kamu" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="nama@email.com" required />
+              </div>
+
+              <div class="field">
+                <label for="track">Background</label>
+                <select id="track" name="track" required>
+                  <option value="">Pilih salah satu</option>
+                  <option value="non-it">Non-IT</option>
+                  <option value="it">IT</option>
+                  <option value="student">Pelajar/Mahasiswa</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="city">Domisili</label>
+                <input id="city" name="city" type="text" placeholder="Kota kamu" />
+              </div>
+
+              <div class="field field-full">
+                <label for="message">Goals (opsional)</label>
+                <textarea id="message" name="message" rows="4" placeholder="Mau belajar apa dari kelas ini?"></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Daftar</button>
+              <p class="form-note">
+                Dengan klik “Daftar”, kamu setuju untuk latihan bareng secara santai.
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Live Class HTML + CSS. Built for learning.</p>
+        <p class="small-note">
+          Tips: coba edit warna, spacing, dan layout untuk latihan tambahan.
+        </p>
+      </div>
+    </footer>
+</body>
+</html>
