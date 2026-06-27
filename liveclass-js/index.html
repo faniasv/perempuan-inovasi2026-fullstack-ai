@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page - HTML & CSS Live Class</title>
+    <!-- External CSS (kita pakai ini untuk final) -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="Kembali ke atas">
+          <span class="brand-mark">NIP</span>
+          <span class="brand-text">Live Class</span>
+        </a>
+
+        <nav class="nav" aria-label="Navigasi utama">
+          <ul class="nav-links">
+            <li><a href="#features">Materi</a></li>
+            <li><a href="#schedule">Jadwal</a></li>
+            <li><a href="#signup">Daftar</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1>Belajar HTML + CSS dari Nol (2 Jam)</h1>
+            <p class="lead">
+              Kita bikin 1 landing page bareng-bareng sambil <strong>live coding</strong>.
+              Santai, step-by-step, cocok untuk background <em>IT</em> maupun <em>non-IT</em>.
+            </p>
+            <!-- Button di Header-->
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#signup">Ikut Latihan</a>
+              <a class="btn btn-ghost" href="#features">Lihat Materi</a>
+            </div>
+
+            <p class="small-note">
+              Catatan: ini project latihan. Silakan modifikasi sesuai kebutuhan.
+            </p>
+          </div>
+
+          <div class="hero-media">
+            <img
+              src="https://images.unsplash.com/photo-1522252234503-e356532cafd5?auto=format&fit=crop&w=1200&q=60"
+              alt="Ilustrasi orang sedang belajar coding"
+            />
+          </div>
+        </div>
+      </section>
+      
+      <section id="features" class="section">
+        <div class="container">
+          <h2 class="section-title">Materi yang Dipakai</h2>
+          <p class="section-subtitle">
+            HTML untuk struktur, CSS untuk styling. Kita gabungkan dalam 1 landing page.
+          </p>
+
+          <div class="cards">
+            <article class="card">
+              <h3>HTML Basics</h3>
+              <ul>
+                <li>Struktur dokumen</li>
+                <li>Element, tag, attribute, comment</li>
+                <li>Tag teks (h1, p, strong, em)</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>HTML Components</h3>
+              <ul>
+                <li>Multimedia (img)</li>
+                <li>Tabel (table, thead, tbody)</li>
+                <li>Form (input, select, textarea)</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>CSS Layout</h3>
+              <ul>
+                <li>Selector + pseudo class/element</li>
+                <li>Box model + box sizing</li>
+                <li>Display + Positioning + Flexbox</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="schedule" class="section section-alt">
+        <div class="container">
+          <h2 class="section-title">Jadwal Singkat</h2>
+          <p class="section-subtitle">
+            Ini contoh tabel. Nanti kamu boleh ubah sesuai kebutuhan kelas.
+          </p>
+
+          <div class="table-wrap">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Waktu</th>
+                  <th>Topik</th>
+                  <th>Output</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0:05–0:35</td>
+                  <td>HTML struktur + layout</td>
+                  <td>Skeleton landing page</td>
+                </tr>
+                <tr>
+                  <td>0:35–0:50</td>
+                  <td>Multimedia + tabel + form</td>
+                  <td>Halaman makin lengkap</td>
+                </tr>
+                <tr>
+                  <td>0:50–2:15</td>
+                  <td>CSS (selector → layout → responsive)</td>
+                  <td>Tampilan rapi + mobile friendly</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="signup" class="section">
+        <div class="container">
+          <h2 class="section-title">Form Pendaftaran (Latihan)</h2>
+          <p class="section-subtitle">
+            Form ini belum mengirim data ke server—fokusnya latihan HTML + styling.
+          </p>
+
+          <form class="signup-form" action="https://www.hashemian.com/tools/form-post-tester.php" method="post">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Nama</label>
+                <input id="name" name="name" type="text" placeholder="Nama kamu" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="nama@email.com" required />
+              </div>
+
+              <div class="field">
+                <label for="track">Background</label>
+                <select id="track" name="track" required>
+                  <option value="">Pilih salah satu</option>
+                  <option value="non-it">Non-IT</option>
+                  <option value="it">IT</option>
+                  <option value="student">Pelajar/Mahasiswa</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="city">Domisili</label>
+                <input id="city" name="city" type="text" placeholder="Kota kamu" />
+              </div>
+
+              <div class="field field-full">
+                <label for="message">Goals (opsional)</label>
+                <textarea id="message" name="message" rows="4" placeholder="Mau belajar apa dari kelas ini?"></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Daftar</button>
+              <p class="form-note">
+                Dengan klik “Daftar”, kamu setuju untuk latihan bareng secara santai.
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Live Class HTML + CSS. Built for learning.</p>
+        <p class="small-note">
+          Tips: coba edit warna, spacing, dan layout untuk latihan tambahan.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
