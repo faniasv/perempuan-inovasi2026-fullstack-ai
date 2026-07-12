@@ -1,0 +1,362 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fcf9ff; /* Warna latar ungu sangat muda */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header / Hero Section */
+.hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 10%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 20px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #6a1b9a; /* Warna ungu utama */
+    margin-bottom: 10px;
+}
+
+.privacy-badge {
+    display: inline-block;
+    background-color: #e1bee7;
+    color: #4a148c;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* Main App Section */
+.app-section {
+    padding: 50px 10%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-text {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.intro-text h2 {
+    color: #6a1b9a;
+    margin-bottom: 10px;
+}
+
+/* Form Styles */
+.form-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #4a148c;
+}
+
+.input-group select,
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group select:focus,
+.input-group input:focus {
+    outline: none;
+    border-color: #6a1b9a;
+    box-shadow: 0 0 5px rgba(106, 27, 154, 0.3);
+}
+
+/* Button Action */
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #6a1b9a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #4a148c;
+}
+
+/* Result Container (Tempat hasil AI muncul) */
+.result-container {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #f3e5f5;
+    border-left: 5px solid #6a1b9a;
+    border-radius: 8px;
+    color: #333;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-container h3 {
+    color: #4a148c;
+    margin-bottom: 10px;
+}
+
+.result-container ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* Utility Class untuk menyembunyikan elemen */
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+}
+
+.disclaimer {
+    color: #777;
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+
+/* Responsive Media Queries (Penting untuk poin "Tampil baik di berbagai ukuran layar") */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 5%;
+    }
+
+    .hero-image {
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding-right: 0;
+    }
+
+    .app-section {
+        padding: 30px 5%;
+    }
+}
+
+/* Hasil Rekomendasi*/
+#hasil-rekomendasi h3{
+    color:#E91E63;
+    margin-top:10px;
+}
+
+#hasil-rekomendasi h4{
+    margin-top:15px;
+}
+
+#hasil-rekomendasi ul{
+    padding-left:20px;
+}
+
+#hasil-rekomendasi p{
+    line-height:1.7;
+}
+
+/* Loading Spinner */
+
+.loading-box{
+    text-align:center;
+    padding:30px;
+}
+
+.spinner{
+    width:60px;
+    height:60px;
+
+    margin:0 auto 20px;
+
+    border:6px solid #f4d5df;
+    border-top:6px solid #ff6b9e;
+
+    border-radius:50%;
+
+    animation:putar 1s linear infinite;
+}
+
+@keyframes putar{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.loading-box h3{
+    color:#ff4f87;
+    margin-bottom:10px;
+}
+
+.loading-box p{
+    color:#666;
+}
+
+/* Riwayat Konsultasi */
+
+#riwayat{
+
+    margin-top:40px;
+
+}
+
+#riwayat h2{
+
+    color:#d63384;
+
+    margin-bottom:20px;
+
+}
+
+.item-riwayat{
+
+    background:#ffffff;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    margin-bottom:15px;
+
+    border-left:6px solid #ff7ca8;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+
+}
+
+.item-riwayat:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+}
+
+.item-riwayat strong{
+
+    color:#d63384;
+
+    font-size:17px;
+
+}
+
+.item-riwayat p{
+
+    margin-top:8px;
+
+    color:#666;
+
+}
+
+.empty-history{
+
+    text-align:center;
+
+    color:#999;
+
+    background:#fff;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+}
+
+/* Tombol Simpan PDF */
+
+.aksi-hasil{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+#btn-copy{
+    background: #ff7ca8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+#btn-copy:hover{
+    background: #ff5d8f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255,124,168,.35);
+}

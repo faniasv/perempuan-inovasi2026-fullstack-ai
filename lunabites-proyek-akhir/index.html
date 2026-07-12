@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LunaBites - Panduan Gizi Saat Menstruasi</title>
+    <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts untuk tipografi yang rapi -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Bagian Header & Hero (Sesuai kriteria penilaian: Ada header dan image) -->
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>LunaBites</h1>
+            <p>Panduan Gizi dan Resep Makanan Berbasis AI Sesuai Fase Menstruasimu.</p>
+            <p class="privacy-badge">✨ 100% Privacy-Friendly. Tanpa fitur kalender haid.</p>
+        </div>
+        <!-- Placeholder untuk Image Representatif -->
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi makanan sehat dan nutrisi">
+        </div>
+    </header>
+
+    <!-- Bagian Utama (Aplikasi/Formulir) -->
+    <main class="app-section">
+        <section class="intro-text">
+            <h2>Pilih Kondisimu Hari Ini</h2>
+            <p>Banyak perempuan mengalami keluhan fisik hingga ketidakseimbangan hormon akibat gizi yang kurang sesuai. Ceritakan kondisimu, biarkan AI kami merekomendasikan nutrisi yang tepat!</p>
+        </section>
+
+        <!-- Form Input Pengguna -->
+        <section class="form-container">
+            <div class="input-group">
+                <label for="fase-haid">Kamu sedang di fase apa?</label>
+                <select id="fase-haid">
+                    <option value="" disabled selected>Pilih Fase Menstruasi...</option>
+                    <option value="Menstruasi">Menstruasi (Hari 1-5)</option>
+                    <option value="Folikuler">Folikuler (Hari 6-14)</option>
+                    <option value="Ovulasi">Ovulasi (Sekitar Hari 14)</option>
+                    <option value="Luteal">Luteal (Hari 15-28)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="gejala">Gejala apa yang kamu rasakan?</label>
+                <input type="text" id="gejala" placeholder="Contoh: Kram perut, kembung, mual, atau mood swing" autocomplete="off">
+            </div>
+
+            <!-- Tombol Action (Sesuai kriteria penilaian: Button bisa diklik) -->
+            <button id="btn-cari" class="btn-primary">Cari Rekomendasi Gizi</button>
+        </section>
+
+        <!-- Bagian Hasil Rekomendasi AI -->
+        <section id="hasil-rekomendasi" class="result-container hidden">
+            <!-- Hasil AI akan muncul di sini -->
+        </section>
+
+        <!-- Tombol Aksi -->
+        <div class="aksi-hasil">
+            <button id="btn-copy">Simpan PDF</button>
+        </div>
+
+        <!-- Riwayat Konsultasi -->
+        <section id="riwayat">
+            <h2>Riwayat Rekomendasi</h2>
+            <div id="list-riwayat"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Proyek Akhir Basic AI | Dibuat dengan ❤️ untuk Perempuan Inovasi</p>
+        <p class="disclaimer"><em>Disclaimer: LunaBites adalah panduan edukasi, bukan pengganti saran dokter medis.</em></p>
+    </footer>
+
+    <!-- Menghubungkan file Javascript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.6/purify.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
