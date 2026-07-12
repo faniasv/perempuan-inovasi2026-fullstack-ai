@@ -5,6 +5,9 @@ const inputGejala = document.getElementById("gejala");
 const containerHasil = document.getElementById("hasil-rekomendasi");
 const listRiwayat = document.getElementById("list-riwayat");
 const aksiHasil = document.querySelector(".aksi-hasil");
+const btnPDF = document.getElementById("btn-pdf");
+// Menyimpan hasil AI terakhir
+let hasilTerakhir = "";
 
 btnCari.addEventListener("click", async () => {
 
@@ -80,6 +83,8 @@ Aturan Output:
         const resultHTML = DOMPurify.sanitize(
             data.candidates[0].content.parts[0].text
         );
+
+        hasilTerakhir = resultHTML;
 
         containerHasil.innerHTML = resultHTML;
 
@@ -183,3 +188,86 @@ tampilkanRiwayat();
 
 // Sembunyikan tombol aksi
 aksiHasil.classList.add("hidden");
+
+btnPDF.addEventListener("click", () => {
+
+    if (!hasilTerakhir) {
+        alert("Belum ada rekomendasi untuk disimpan.");
+        return;
+    }
+
+    const { jsPDF } = window.jspdf;
+
+    const doc = new jsPDF();
+
+    const tanggal = new Date().toLocaleDateString("id-ID", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    });
+
+    const hasilPDF = hasilTerakhir.replace(/<[^>]*>/g, "");
+
+    // ======================
+    // Header
+    // ======================
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(22);
+    doc.text("LunaBites", 20, 20);
+
+    doc.setFontSize(16);
+    doc.text("Rekomendasi Nutrisi Personal", 20, 30);
+
+    doc.setDrawColor(255, 105, 180);
+    doc.line(20, 35, 190, 35);
+
+    // ======================
+    // Informasi
+    // ======================
+
+    doc.setFontSize(11);
+    doc.setFont("helvetica", "normal");
+
+    doc.text(`Tanggal : ${tanggal}`, 20, 45);
+    doc.text(`Fase     : ${inputFase.value}`, 20, 53);
+    doc.text(`Gejala   : ${inputGejala.value}`, 20, 61);
+
+    doc.line(20, 68, 190, 68);
+
+    // ======================
+    // Isi
+    // ======================
+
+    const isi = doc.splitTextToSize(hasilPDF, 170);
+
+    doc.text(isi, 20, 78);
+
+    // ======================
+    // Footer
+    // ======================
+
+    doc.setDrawColor(220);
+
+    doc.line(20, 260, 190, 260);
+
+    doc.setFontSize(10);
+
+    doc.text(
+        "Catatan: Rekomendasi ini bersifat edukatif dan bukan pengganti konsultasi tenaga kesehatan.",
+        20,
+        270,
+        { maxWidth: 170 }
+    );
+
+    doc.setFont("helvetica", "italic");
+
+    doc.text(
+        "Stay nourished with LunaBites 🌙",
+        20,
+        285
+    );
+
+    doc.save(`LunaBites-${tanggal}.pdf`);
+
+});
